@@ -615,6 +615,49 @@ html.with-fancybox body.hide-scrollbar {
 /* ----------------------------------- *\
 			items styles
 \* ----------------------------------- */
+.item-tile-info {
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100%;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  position: relative;
+  text-align: center;
+  font-size: 25px;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--clr-base-white);
+  text-transform: uppercase;
+}
+.item-tile-info .elm-ico {
+  height: 175px;
+  height: 17.5rem;
+  width: 100%;
+  position: absolute;
+  top: -90px;
+  top: -9rem;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.item-tile-info .tile-content-wrap {
+  display: block;
+  position: relative;
+  width: 100%;
+  -ms-flex: 1;
+      flex: 1;
+  padding: 70px 10px 20px 10px;
+  padding: 7rem 10px 20px 10px;
+  border-radius: 3.2rem;
+  background: rgba(5, 3, 136, 0.63);
+}
+.item-tile-info .tile-title {
+  display: block;
+  margin: 0 auto;
+}
+.item-tile-info b {
+  font-weight: 500;
+}
 .item-tile-title {
   display: -ms-flexbox;
   display: flex;
@@ -979,6 +1022,30 @@ html.with-fancybox body.hide-scrollbar {
   background: #000 url(../img/main/bg.jpg) center top;
   background-size: 100% auto;
 }
+.tiles-box {
+  margin-bottom: 30px;
+}
+.tiles-box .title-inner-wrap {
+  margin-bottom: 90px;
+  margin-bottom: 9rem;
+  text-align: center;
+  color: var(--clr-base-white);
+}
+.tiles-box .items-inner-wrap {
+  margin: 0 auto;
+  max-width: 864px;
+}
+.tiles-box .items-wrap {
+  gap: 80px 0;
+}
+.tiles-box .item-wrap {
+  width: 33.33%;
+}
+.tiles-box .section-title {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
 .info-box {
   position: relative;
   display: -ms-flexbox;
@@ -1051,6 +1118,7 @@ html.with-fancybox body.hide-scrollbar {
   padding: 0;
   margin-bottom: -30px;
   margin-bottom: -3rem;
+  animation: 0.5s ease-out 0s 1 normal forwards running appearAnimation, 3s ease-in-out 0.5s infinite normal none running floatAnimation;
 }
 .info-box .item-wrap:last-child {
   margin-bottom: 0;
@@ -1764,6 +1832,16 @@ html.with-fancybox body.hide-scrollbar {
   }
 }
 @media (max-width: 639px) {
+  .tiles-box .items-wrap {
+    -ms-flex-pack: center;
+        justify-content: center;
+  }
+  .tiles-box .item-wrap {
+    width: 50%;
+  }
+  .tiles-box .item-wrap:last-child {
+    width: 100%;
+  }
   .info-box {
     min-height: 0;
     -ms-flex-direction: column;
@@ -2421,6 +2499,38 @@ select.form-input:required:invalid {
 /* ----------------------------------- *\
 		common styles
 \* ----------------------------------- */
+@keyframes appearAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotate(0deg);
+    filter: brightness(10);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.1) rotate(5deg);
+    filter: brightness(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: brightness(1);
+  }
+}
+@keyframes floatAnimation {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(1deg);
+  }
+}
 @keyframes flash {
   0% {
     opacity: 0.55;

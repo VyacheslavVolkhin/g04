@@ -1,6 +1,40 @@
 /* ----------------------------------- *\
 			items styles
 \* ----------------------------------- */
+.item-tile-info {
+	display: flex;
+	min-height: 100%;
+	flex-direction: column;
+	position: relative;
+	text-align: center;
+	font-size: 2.5rem;
+	line-height: 1;
+	color: var(--clr-base-white);
+	text-transform: uppercase;
+	.elm-ico {
+		height: 17.5rem;
+		width: 100%;
+		position: absolute;
+		top: -9rem;left: 0;right: 0;
+		z-index: 2;
+	}
+	.tile-content-wrap {
+		display: block;
+		position: relative;
+		width: 100%;
+		flex: 1;
+		padding: 7rem 10px 20px 10px;
+		border-radius: 3.2rem;
+		background: fade(#050388, 63);
+	}
+	.tile-title {
+		display: block;
+		margin: 0 auto;
+	}
+	b {
+		font-weight: 500;
+	}
+}
 .item-tile-title {
 	display: flex;
 	align-items: center;
