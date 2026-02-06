@@ -1,0 +1,328 @@
+/* ----------------------------------- *\
+			items styles
+\* ----------------------------------- */
+.item-tile-title {
+	display: flex;
+	align-items: center;
+	position: relative;
+	overflow: hidden;
+	aspect-ratio: 451/138;
+	background: url(../img/001.png) center no-repeat;
+	background-size: 100% auto;
+	width: (451/25.8em);
+	font-size: 25.8px;
+	color: var(--clr-base-white);
+	&:hover {
+		color: var(--clr-base-white);
+	}
+	&.title01 {
+		padding-left: 4em;
+		padding-top: 0.5em;
+		.tile-title {
+			transform: rotate(-1deg);
+		}
+	}
+	&.title02 {
+		width: (471/25.8em);
+		aspect-ratio: 471/126;
+		background-image: url(../img/002.png);
+		padding-left: 4em;
+		.tile-title {
+			transform: rotate(1deg);
+		}
+	}
+	&.title03 {
+		width: (517/25.8em);
+		aspect-ratio: 517/141;
+		background-image: url(../img/003.png);
+		padding-bottom: 0.5em;
+		padding-left: 4em;
+		.tile-title {
+			span {
+				font-size: (18/25.8em);
+			}
+		}
+	}
+	&.title04 {
+		width: (439/25.8em);
+		aspect-ratio: 439/160;
+		background-image: url(../img/004.png);
+		padding-left: 4em;
+		.tile-title {
+			transform: rotate(2deg);
+		}
+	}
+	.tile-title {
+		display: block;
+		width: 100%;
+		flex-shrink: 0;
+		line-height: 1;
+		font-weight: 900;
+		text-align: center;
+		margin: 0;
+		white-space: nowrap;
+		.ftitle;
+		span {
+			display: block;
+			font-size: (14.4/25.8em);
+		}
+	}
+}
+.item-tile-catalog {
+	display: flex;
+	flex-direction: column;
+	font-size: 18px;
+	color: var(--clr-base);
+	text-align: center;
+	line-height: 1.16;
+	transition: all ease 0.2s;
+	&+.item-tile-catalog {
+		margin-top: 5rem;
+	}
+	&:nth-child(:only-child) {
+		min-height: 100%;
+	}
+	&:hover {
+		color: var(--clr-att);
+	}
+	.tile-content-wrap {
+		display: block;
+		position: relative;
+		border-radius: 2.8rem;
+		border: 2px solid #a4a4a4;
+		padding: 10px;
+	}
+	.tile-head-wrap {
+		margin-bottom: 10px;
+	}
+	.tile-title-wrap {
+		display: block;
+		padding: 8px 0 0 0;
+	}
+	.tile-title {
+		display: block;
+		padding: 0 10px;
+		max-height: 2.32em;
+		height: 2.32em;
+		position: relative;
+		overflow: hidden;
+	}
+	.tile-head {
+		display: flex;
+		align-items: center;
+		position: relative;
+		height: 44px;
+		padding: 0 10px 0 72px;
+		border-radius: 40px;
+		background: #ff009c;
+		color: var(--clr-base-white);
+		font-size: 13px;
+		line-height: 13px;
+		text-transform: uppercase;
+		font-weight: bold;
+		text-align: left;
+		&:before {
+			content: "";
+			display: block;
+			width: 60px;
+			aspect-ratio: 60/55;
+			position: absolute;
+			background: url(../img/icons/1.png) center no-repeat;
+			background-size: 100% auto;
+			top: 50%;left: 30px;
+			transform: translate(-50%, -50%);
+		}
+	}
+	.tile-head-title {
+		display: block;
+		max-height: 39px;
+		position: relative;
+		overflow: hidden;
+		flex-shrink: 0;
+		width: 100%;
+	}
+	.elm-photo {
+		aspect-ratio: 180/210;
+	}
+}
+.item-tile-discount {
+	display: block;
+	position: relative;
+	min-height: 100%;
+	border-radius: 4rem;
+	background: var(--clr-bg-white);
+	text-align: center;
+	font-size: 2rem;
+	text-transform: uppercase;
+	line-height: 0.9;
+	color: var(--clr-att);
+	&:hover {
+		color: var(--clr-att);
+	}
+	.tile-photo-wrap {
+		margin: 0 -10px 0 -10px;
+		position: relative;
+		top: -2rem;
+	}
+	.tile-title-wrap {
+		margin-bottom: 10px;
+		position: relative;
+		z-index: 3;
+		margin-top: -6rem;
+	}
+	.tile-info-wrap {
+		padding: 0 10px 30px 10px;
+	}
+	.tile-title {
+		display: inline-block;
+		font-size: 3.2rem;
+		text-transform: uppercase;
+		color: var(--clr-base-white);
+		padding: 0 12px;
+		height: 6rem;
+		line-height: 6rem;
+		background: #ff009c;
+		border-radius: 40px;
+		font-weight: 900;
+		.ftitle;
+		position: relative;
+		max-width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.elm-photo {
+		aspect-ratio: 316/165;
+	}
+	b {
+		font-weight: 500;
+	}
+}
+.item-tile-action {
+	position: relative;
+	background: #b90071;
+	display: flex;
+	align-items: flex-end;
+	min-height: 100%;
+	font-size: 3.2rem;
+	line-height: 1;
+	text-transform: uppercase;
+	color: var(--clr-base-white);
+	text-align: left;
+	padding: 82px 10px 22px 1.3em;
+	border-radius: 4.5rem;
+	max-width: (434/32em);
+	margin: 0 auto;
+	&.tile-second {
+		padding-left: 2rem;
+		.elm-photo {
+			aspect-ratio: 176/190;
+			width: 17.6rem;
+			margin-bottom: -95px;
+			left: 30px;
+		}
+	}
+	.elm-photo {
+		display: block;
+		aspect-ratio: 261/155;
+		width: 26.1rem;
+		position: absolute;
+		bottom: 100%;left: 20px;
+		margin-bottom: -70px;
+	}
+	.tile-title {
+		.ftitle;
+	}
+}
+.item-tile-question {
+	display: block;
+	position: relative;
+	&:has(.btn-question) {
+		.tile-content-block {
+			position: relative;
+			height: 0;
+			overflow: hidden;
+			interpolate-size: allow-keywords;
+			transition: all ease 0.2s;
+			padding: 0;
+		}
+	}
+	&:has(.btn-question.active)  {
+		.tile-content-block {
+			height: auto;
+			padding-top: 5px;
+		}
+	}
+	.tile-content-block {
+		padding: 5px 0 0 0;
+		display: block;
+		position: relative;
+	}
+	.btn-question {
+		display: block;
+		position: relative;
+		font-size: 2.9rem;
+		font-weight: 500;
+		text-transform: uppercase;
+		color: var(--clr-base);
+		border-radius: 30px;
+		line-height: (33/29);
+		padding: 7px 50px 7px 17px;
+		background: #fcd11d;
+		transition: all ease 0.2s;
+		.fsecond;
+		&:before, &:after {
+			content: "";
+			display: block;
+			width: 24px;
+			height: 6px;
+			border-radius: 3px;
+			background: #000;
+			position: absolute;
+			top: 50%;right: 24px;
+			margin: -3px -12px 0 0;
+			transition: all ease 0.2s;
+		}
+		&:before {
+			transform: rotate(90deg);
+		}
+		&:hover, &.active {
+			background: #ffd83d;
+			color: var(--clr-base);
+		}
+		&.active {
+			&:before {
+				transform: rotate(0deg);
+			}
+		}
+	}
+}
+@media (max-width: 1023px) {
+	.item-tile-catalog {
+		font-size: 16px;
+		.tile-head {
+			padding-left: 55px;
+			&:before {
+				width: 40px;
+				left: 30px;
+			}
+		}
+		.tile-head-title {
+			font-size: 10px;
+		}
+	}
+}
+@media (max-width: 479px) {
+	.item-tile-catalog {
+		.tile-head {
+			padding-left: 40px;
+			&:before {
+				width: 30px;
+				left: 20px;
+			}
+		}
+		.tile-head-title {
+			font-size: 9px;
+		}
+	}
+}
