@@ -1,6 +1,98 @@
 /* ----------------------------------- *\
 			forms elements styles
 \* ----------------------------------- */
+.frm-popup {
+	margin: 0 auto;
+	position: relative;
+	.frm-field {
+		margin-bottom: 2.6rem;
+		padding: 0 1.5rem;
+		display: flex;
+		width: 100%;
+		align-items: center;
+		gap: 4.6rem;
+		flex-wrap: nowrap;
+	}
+	.frm-row, .frm-row-submit {
+		margin: 0 -1.5rem;
+	}
+	.field-content {
+		flex: 1;
+	}
+	.field-info {
+		font-size: (34/29em);
+		text-transform: uppercase;
+		width: 100%;
+		text-align: center;
+		.fsecond;
+	}
+	.field-title {
+		font-size: (41/29em);
+		line-height: 1;
+		text-transform: uppercase;
+		flex-shrink: 0;
+		.fsecond;
+	}
+	.frm-select {
+		width: 100%;
+		flex-shrink: 0;
+		margin: 0 auto 3rem auto;
+		max-width: 71rem;
+		.fsecond;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	.field-select {
+		width: auto;
+		flex: 0 0 auto;
+		&~.frm-field {
+			width: auto;
+			flex: 1;
+		}
+		.field-content {
+			display: flex;
+			align-items: center;
+			gap: 10px 2.5rem;
+		}
+		.frm-select {
+			margin: 0;
+			flex-shrink: 0;
+			width: auto;
+			font-size: (41/29em);
+		}
+	}
+	.field-submit {
+		justify-content: center;
+		padding-top: 2rem;
+		text-align: center;
+		margin-bottom: 0;
+		// .btn {
+		// 	font-size: (41/29em);
+		// 	height: (66/41em);
+		// 	padding: 0 (42/41em);
+		// 	border-radius: 30px;
+		// 	box-shadow: none;
+		// 	text-transform: uppercase;
+		// }
+	}
+	.frm-row-submit {
+		.frm-field {
+			display: block;
+		}
+	}
+	.row-login {
+		.field-submit {
+			padding-top: 0;
+		}
+		&+.row-login {
+			margin-top: 3.5rem;
+		}
+		.btn.button-yellow {
+			box-shadow: 0 0 10px fade(#5ce500, 60), 0 0 10px fade(#5ce500, 60), 0 0 10px fade(#5ce500, 60);
+		}
+	}
+}
 .frm-main-code {
 	display: block;
 	position: relative;
@@ -75,6 +167,55 @@
     display: block;
     width: 100%;
 }
+
+.frm-field-file {
+	position: relative;
+	&.file-active {
+		.file-inner-wrap {
+			display: inline-block;
+		}
+		.button-file-attach {
+			display: none;
+		}
+	}
+	input {
+		display: none;
+	}
+	.file-inner-wrap {
+		display: none;
+		max-width: 100%;
+		padding: 0 30px 0 0;
+		font-size: 3rem;
+		text-transform: none;
+		position: relative;
+		color: #fff;
+		.file-name {
+			display: block;
+			position: relative;
+			max-width: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		.button-file-del {
+			width: 24px;height: 24px;
+			position: absolute;
+			top: 50%;right: 0;
+			margin-top: -13px;
+		}
+	}
+	.button-file-attach {
+		height: 7.2rem;
+		width: 100%;
+		border-radius: 4rem;
+		background: var(--clr-att-second);
+		border: none;
+		padding: 0 24px;
+		font-size: 4.2rem;
+		color: var(--clr-base);
+		text-transform: uppercase;
+	}
+}
 .frm-select {
 	position: relative;
 	display: block;
@@ -113,20 +254,12 @@
 
 
 .frm-select {
+	position: relative;
+	display: flex;
+	align-items: center;
+	min-height: (48/29em);
+	overflow: visible;
 	input {
-		&[type="radio"] {
-			&~label {
-				&:before {
-					border-radius: 50%;
-				}
-				&:after {
-					width: 8px;height: 8px;
-					margin: -4px 0 0 -4px;
-					border-radius: 50%;
-					background: #000;
-				}
-			}
-		}
 		&:checked {
 			&~label {
 				&:after {
@@ -136,20 +269,73 @@
 		}
 	}
 	label {
+		display: block;
+		padding-left: (70/29em);
 		&:before, &:after {
-			
+			width: (48/29em);
+			height: (48/29em);
+			border-radius: 1.2rem;
+			background: #fff;
+			box-shadow: inset 0px 4px 6.58px 0.42px rgba(0, 0, 0, 0.77);
+			top: 50%;left: 0;
+			transform: translateY(-50%);
 		}
 		&:after {
 			border-radius: 0;
 			border: none;
-			background: url(../img/icons/chk.svg) center / 24px auto no-repeat;
+			background: url(../img/icons/chk.png) center / 100% auto no-repeat;
 			opacity: 0;
+			box-shadow: none;
 		}
 	}
 	a {
 		color: inherit;
 		&:hover {
 			color: var(--clr-att);
+		}
+	}
+}
+
+@media (max-width: 479px) {
+	.frm-popup {
+		.frm-field {
+			display: block;
+		}
+		.field-title {
+			margin: 0 0 10px 0;
+			padding-left: 8px;
+		}
+		.field-select {
+			width: 100%;
+			flex-shrink: 0;
+		}
+	}
+}
+@media (min-width: 1024px) {
+	.frm-popup {
+		.frm-row-submit {
+			&.row-login {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 0;
+				.frm-field {
+					width: auto;
+					flex-shrink: 0;
+					margin: 0;
+					&:first-child {
+						flex: 1;
+					}
+				}
+				.field-info {
+					text-align: left;
+				}
+			}
+			.btn {
+				min-width: 270px;
+				font-size: (33/29em);
+				height: (60/33em);
+			}
 		}
 	}
 }

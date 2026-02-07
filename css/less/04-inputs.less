@@ -23,6 +23,19 @@
 	&:focus, &:not(:placeholder-shown), &.inp-valid {
 	}
 }
+.form-input {
+    text-overflow: ellipsis;
+	height: 5.9rem;
+	font-size: 2.9rem;
+	background: #fff;
+	border: none;
+	border-radius: 30px;
+	padding: 0 1em;
+	box-shadow: inset 0px 4px 6.58px 0.42px rgba(0, 0, 0, 0.77);
+	color: var(--clr-base);
+	text-transform: uppercase;
+	.fsecond !important;
+}
 textarea.form-input {
 
 }
@@ -390,22 +403,14 @@ select.form-input:required:invalid {
         }
     }
     &.ico-close {
-        &:after, &:before {
-            width: 20px;
-            height: 2px;
-            top: 50%;
-            left: 50%;
-            bottom: auto;
-            right: auto;
-            margin: -1px 0 0 -10px;
-            background: var(--clr-base);
-        }
-        &:before {
-            .t-rotate(45deg);
-        }
-        &:after {
-            .t-rotate(-45deg);
-        }
+		width: 5.2rem;
+		height: 5.2rem;
+		&:before {
+			background-image: url(../img/icons/close.png);
+			background-size: 100% auto;
+		}
+		&:before {
+		}
     }
     &.button-soc {
         img, svg {
